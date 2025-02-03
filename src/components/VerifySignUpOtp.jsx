@@ -24,12 +24,14 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
   const pinRef = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
+  console.log("pins", pins);
+
   const verifyOtpMutation = useMutation({
     mutationFn: async (formData) => {
       console.log(formData);
       try {
         const response = await BaseAxios({
-          url: "/admin/verify_code/",
+          url: "/admin/verify-email/",
           method: "POST",
           data: formData,
         });
@@ -46,15 +48,17 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
       }
     },
     onSuccess: (data) => {
-      notiSuccess("OTP verified successfully");
+      console.log("data---55666", data);
+      navigate("/overview");
+      const adminData = {
+        email: data?.email,
+        firstname: data?.firstname,
+        role: data?.role,
+      };
 
-      console.log(data);
-      setUuid(data?.uid64);
-
-      setTimeout(() => {
-        setButtonDisabled(false);
-        setComponent("Change");
-      }, 1000);
+      localStorage.setItem("user", JSON.stringify(adminData));
+      Cookies.set("authToken", data?.tokens?.access);
+      Cookies.set("refreshToken", data?.tokens?.refresh);
 
       // Handle success, update state, or perform further actions
     },

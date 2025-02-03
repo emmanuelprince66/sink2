@@ -12,7 +12,7 @@ import SignUpCom from "./SignUpCom";
 import VerifySignUpOtp from "../components/VerifySignUpOtp";
 
 const Login = () => {
-  const [component, setComponent] = useState("verify-signup");
+  const [component, setComponent] = useState("Login");
   const [userEmail, setUserEmail] = useState("");
   const [uuid, setUuid] = useState("");
 

@@ -61,21 +61,17 @@ const SignUpCom = ({ setComponent, setUserEmail }) => {
           data: formData,
         });
 
-        if (response.status !== 200) {
-          throw new Error(response.data.message);
-        }
-
         console.log("response", response);
         return response.data;
       } catch (error) {
-        notiError(error?.response?.data?.error);
+        console.log("error----556", error);
+        notiError(error?.response?.data?.detail);
         console.log(error?.response?.data?.error);
         throw new Error(error.response.data.error);
       }
     },
     onSuccess: (data) => {
-      console.log("data", data);
-      setUserEmail(data?.email);
+      console.log("data---3", data);
       setButtonDisabled(false);
       setComponent("verify-signup");
       // navigate("/overview");
@@ -92,6 +88,7 @@ const SignUpCom = ({ setComponent, setUserEmail }) => {
       // Handle success, update state, or perform further actions
     },
     onError: (error) => {
+      console.log("error", error);
       setButtonDisabled(false);
       notifyError(String(error));
     },
@@ -128,6 +125,7 @@ const SignUpCom = ({ setComponent, setUserEmail }) => {
     };
 
     console.log("payload", payload);
+    setUserEmail(email);
 
     setButtonDisabled(true);
 
