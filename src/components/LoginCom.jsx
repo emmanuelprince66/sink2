@@ -49,7 +49,7 @@ const LoginCom = ({ setComponent }) => {
       console.log(formData);
       try {
         const response = await BaseAxios({
-          url: "/admin/login/",
+          url: "/auth/login/",
           method: "POST",
           data: formData,
         });
@@ -66,17 +66,18 @@ const LoginCom = ({ setComponent }) => {
       }
     },
     onSuccess: (data) => {
+      console.log("data", data);
       setButtonDisabled(false);
       navigate("/overview");
-      const adminData = {
-        email: data?.email,
-        firstname: data?.firstname,
-        role: data?.role,
-      };
+      // const adminData = {
+      //   email: data?.email,
+      //   firstname: data?.firstname,
+      //   role: data?.role,
+      // };
 
-      localStorage.setItem("user", JSON.stringify(adminData));
-      Cookies.set("authToken", data?.tokens?.access);
-      Cookies.set("refreshToken", data?.tokens?.refresh);
+      // localStorage.setItem("user", JSON.stringify(adminData));
+      Cookies.set("authToken", data?.access_token);
+      Cookies.set("refreshToken", data?.refresh_token);
 
       // Handle success, update state, or perform further actions
     },
@@ -288,10 +289,9 @@ const LoginCom = ({ setComponent }) => {
               </Grid>
 
               <Button
-                onClick={() => navigate("/overview")}
                 variant="contained"
                 type="submit"
-                // disabled={buttonDisabled}
+                disabled={buttonDisabled}
                 sx={{
                   color: "#fff",
                   background: "#02981D",
@@ -302,16 +302,15 @@ const LoginCom = ({ setComponent }) => {
                   },
                 }}
               >
-                {/* {buttonDisabled ? (
+                {buttonDisabled ? (
                   <CircularProgress size="1.2rem" sx={{ color: "white" }} />
                 ) : (
                   "Login"
-                )} */}
-                Login
+                )}
               </Button>
               <Button
-                variant="transparent"
                 onClick={() => setComponent("signup")}
+                variant="transparent"
                 sx={{
                   color: "#000",
                   background: "transparent",
