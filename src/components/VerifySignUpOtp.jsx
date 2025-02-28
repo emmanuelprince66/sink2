@@ -24,8 +24,6 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
   const pinRef = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  console.log("pins", pins);
-
   const verifyOtpMutation = useMutation({
     mutationFn: async (formData) => {
       console.log(formData);
@@ -43,6 +41,7 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
         return response.data;
       } catch (error) {
         notiError(error?.response?.data?.error);
+        console.log("errt", error);
         console.log(error?.response?.data?.error);
         throw new Error(error.response.data.error);
       }

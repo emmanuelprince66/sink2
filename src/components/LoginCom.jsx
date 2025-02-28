@@ -290,8 +290,8 @@ const LoginCom = ({ setComponent }) => {
 
               <Button
                 variant="contained"
-                type="submit"
                 disabled={buttonDisabled}
+                onClick={() => navigate("/overview")}
                 sx={{
                   color: "#fff",
                   background: "#02981D",
