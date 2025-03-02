@@ -29,7 +29,7 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
       console.log(formData);
       try {
         const response = await BaseAxios({
-          url: "/admin/verify-email/",
+          url: "/auth/verify-email/",
           method: "POST",
           data: formData,
         });
@@ -48,16 +48,18 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
     },
     onSuccess: (data) => {
       console.log("data---55666", data);
-      navigate("/overview");
-      const adminData = {
-        email: data?.email,
-        firstname: data?.firstname,
-        role: data?.role,
-      };
+      notiSuccess("Email verified successfully!");
 
-      localStorage.setItem("user", JSON.stringify(adminData));
-      Cookies.set("authToken", data?.tokens?.access);
-      Cookies.set("refreshToken", data?.tokens?.refresh);
+      setComponent("Login");
+      // const adminData = {
+      //   email: data?.email,
+      //   firstname: data?.firstname,
+      //   role: data?.role,
+      // };
+
+      // localStorage.setItem("user", JSON.stringify(adminData));
+      // Cookies.set("authToken", data?.tokens?.access);
+      // Cookies.set("refreshToken", data?.tokens?.refresh);
 
       // Handle success, update state, or perform further actions
     },

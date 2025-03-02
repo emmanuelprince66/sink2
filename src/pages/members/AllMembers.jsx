@@ -112,23 +112,23 @@ const AllMembers = ({
                   fontWeight: "400",
                 }}
               >
-                All Merchants
+                All Partners
               </Button>
               <Button
-                onClick={() => setFilterValue("Free Trial")}
+                onClick={() => setFilterValue("TRIAL")}
                 sx={{
-                  background: filterValue === "Free Trial" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "TRIAL" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === "Free Trial"
+                    filterValue === "TRIAL"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
-                  color: filterValue === "Free Trial" ? "#02981D" : "#5E5E5E",
+                  color: filterValue === "TRIAL" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
                     backgroundColor:
-                      filterValue === "Free Trial" ? "#FAFAFA" : "#fff",
+                      filterValue === "TRIAL" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",
@@ -137,20 +137,20 @@ const AllMembers = ({
                 Free Trial
               </Button>
               <Button
-                onClick={() => setFilterValue("Basic Plan")}
+                onClick={() => setFilterValue("STARTER")}
                 sx={{
-                  background: filterValue === "Basic Plan" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "STARTER" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === "Basic Plan"
+                    filterValue === "STARTER"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
-                  color: filterValue === "Basic Plan" ? "#02981D" : "#5E5E5E",
+                  color: filterValue === "STARTER" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
                     backgroundColor:
-                      filterValue === "Basic Plan" ? "#FAFAFA" : "#fff",
+                      filterValue === "STARTER" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",
@@ -160,20 +160,20 @@ const AllMembers = ({
               </Button>
 
               <Button
-                onClick={() => setFilterValue("Sync Plus")}
+                onClick={() => setFilterValue("SYNC-PLUS")}
                 sx={{
-                  background: filterValue === "Sync Plus" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "SYNC-PLUS" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === "Sync Plus"
+                    filterValue === "SYNC-PLUS"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
-                  color: filterValue === "Sync Plus" ? "#02981D" : "#5E5E5E",
+                  color: filterValue === "SYNC-PLUS" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
                     backgroundColor:
-                      filterValue === "Sync Plus" ? "#FAFAFA" : "#fff",
+                      filterValue === "SYNC-PLUS" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",
@@ -182,20 +182,20 @@ const AllMembers = ({
                 Sync Plus
               </Button>
               <Button
-                onClick={() => setFilterValue("Sync Pro")}
+                onClick={() => setFilterValue("SYNC-PRO")}
                 sx={{
-                  background: filterValue === "Sync Pro" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "SYNC-PRO" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === "Sync Pro"
+                    filterValue === "SYNC-PRO"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
-                  color: filterValue === "Sync Pro" ? "#02981D" : "#5E5E5E",
+                  color: filterValue === "SYNC-PRO" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
                     backgroundColor:
-                      filterValue === "Sync Pro" ? "#FAFAFA" : "#fff",
+                      filterValue === "SYNC-PRO" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",
@@ -204,26 +204,26 @@ const AllMembers = ({
                 Sync Pro
               </Button>
               <Button
-                onClick={() => setFilterValue("Inactive")}
+                onClick={() => setFilterValue("EXPIRED")}
                 sx={{
-                  background: filterValue === "Inactive" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "EXPIRED" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === "Inactive"
+                    filterValue === "EXPIRED"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
                   color: filterValue === "Sync Pro" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
                     backgroundColor:
-                      filterValue === "Inactive" ? "#FAFAFA" : "#fff",
+                      filterValue === "EXPIRED" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",
                 }}
               >
-                Inactive
+                Expired
               </Button>
             </div>
             {/* filterValue */}

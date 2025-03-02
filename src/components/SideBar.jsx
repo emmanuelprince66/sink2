@@ -32,7 +32,7 @@ const SideBar = () => {
       link: "overview",
     },
     {
-      name: "Merchants",
+      name: "Partners",
       component: (
         <span isRightLink={location === "/members"}>
           <Stwo color={location === "/members" ? "white" : "#5E5E5E"} />

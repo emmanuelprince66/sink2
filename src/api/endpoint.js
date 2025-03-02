@@ -4,11 +4,11 @@ export const allMembersUrl = (
   filterValue,
   searchValue
 ) => {
-  return `/admin/users/?page=${currentPage}&limit=${rowsPerPage}&status=${filterValue}&search=${searchValue}`;
+  return `/profile/users/?page=${currentPage}&limit=${rowsPerPage}&plan=${filterValue}&search=${searchValue}`;
 };
 
 export const overveiwUrl = (selectedDates) => {
-  return `/admin/overview/?start_date=${selectedDates?.startDate}&end_date=${selectedDates?.endDate}`;
+  return `/profile/overview/?start_date=${selectedDates?.startDate}&end_date=${selectedDates?.endDate}`;
 };
 
 export const corporativeDataUrl = () => {

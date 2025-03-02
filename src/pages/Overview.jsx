@@ -69,7 +69,7 @@ const Overview = () => {
       </div>
 
       <div className="w-full flex items-center justify-between gap-9 mt-7">
-        {false ? (
+        {isLoading ? (
           <Skeleton variant="rounded" width="100%" height={247} />
         ) : (
           <CustomCard color="#F6FFF8" style="w-full">
@@ -84,20 +84,20 @@ const Overview = () => {
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">All-time:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  <FormattedPrice amount={data?.total_revenue} />
+                  <FormattedPrice amount={data?.total_earnings} />
                 </p>
               </div>
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">By Filter:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  <FormattedPrice amount={data?.filtered_revenue} />
+                  <FormattedPrice amount={data?.period_earnings} />
                 </p>
               </div>
             </div>
           </CustomCard>
         )}
 
-        {false ? (
+        {isLoading ? (
           <Skeleton variant="rounded" width="100%" height={247} />
         ) : (
           <CustomCard color="#FCF5FF" style="w-full">
@@ -105,27 +105,27 @@ const Overview = () => {
               <div className="flex gap-3   items-center">
                 <img src={oTwo} alt="0-1" />
                 <p className="text-general text-[14px] font-[500]">
-                  Total Merchant
+                  Total Users
                 </p>
               </div>
 
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">All-time:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  <FormattedPrice amount={data?.total_savings} />
+                  <FormattedPrice amount={data?.total_users} />
                 </p>
               </div>
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">By Filter:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  <FormattedPrice amount={data?.filtered_savings_sum} />
+                  <FormattedPrice amount={data?.period_users} />
                 </p>
               </div>
             </div>
           </CustomCard>
         )}
 
-        {false ? (
+        {isLoading ? (
           <Skeleton variant="rounded" width="100%" height={247} />
         ) : (
           <CustomCard color="#FFF7E8" style="w-full">
@@ -140,7 +140,7 @@ const Overview = () => {
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">All-time:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  {data?.all_user_count}
+                  {data?.total_subscribed_users}
                 </p>
               </div>
               <div className="flex-col flex items-start gap-2 mt-5">
@@ -152,7 +152,7 @@ const Overview = () => {
             </div>
           </CustomCard>
         )}
-        {false ? (
+        {isLoading ? (
           <Skeleton variant="rounded" width="100%" height={247} />
         ) : (
           <CustomCard color="#FCF5FF" style="w-full">
@@ -167,13 +167,13 @@ const Overview = () => {
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">All-time:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  {data?.all_user_count}
+                  {data?.total_unsubscribed_users}
                 </p>
               </div>
               <div className="flex-col flex items-start gap-2 mt-5">
                 <p className="text-[14px] text-primary_grey_2">By Filter:</p>
                 <p className="text-[24px] font-[600] text-general">
-                  {data?.filter_user_count}
+                  {data?.total_unsubscribed_users}
                 </p>
               </div>
             </div>

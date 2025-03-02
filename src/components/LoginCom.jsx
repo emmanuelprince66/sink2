@@ -69,13 +69,12 @@ const LoginCom = ({ setComponent }) => {
       console.log("data", data);
       setButtonDisabled(false);
       navigate("/overview");
-      // const adminData = {
-      //   email: data?.email,
-      //   firstname: data?.firstname,
-      //   role: data?.role,
-      // };
+      const adminData = {
+        email: data?.email,
+        firstname: data?.name,
+      };
 
-      // localStorage.setItem("user", JSON.stringify(adminData));
+      localStorage.setItem("user", JSON.stringify(adminData));
       Cookies.set("authToken", data?.access_token);
       Cookies.set("refreshToken", data?.refresh_token);
 
@@ -291,7 +290,7 @@ const LoginCom = ({ setComponent }) => {
               <Button
                 variant="contained"
                 disabled={buttonDisabled}
-                onClick={() => navigate("/overview")}
+                type="submit"
                 sx={{
                   color: "#fff",
                   background: "#02981D",
