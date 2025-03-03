@@ -10,6 +10,9 @@ export const allMembersUrl = (
 export const overveiwUrl = (selectedDates) => {
   return `/profile/overview/?start_date=${selectedDates?.startDate}&end_date=${selectedDates?.endDate}`;
 };
+export const earningsUrl = () => {
+  return `/profile/earnings/`;
+};
 
 export const corporativeDataUrl = () => {
   return `/admin/coporative_stats/`;

@@ -94,19 +94,19 @@ const AllMembers = ({
 
             <div className="flex items-center gap-5 w-[70%]">
               <Button
-                onClick={() => setFilterValue("")}
+                onClick={() => setFilterValue("ALL")}
                 sx={{
-                  background: filterValue === "" ? "#FAFAFA" : "#fff",
+                  background: filterValue === "ALL" ? "#FAFAFA" : "#fff",
                   borderRadius: "8px",
                   width: "100%",
                   px: "15px",
                   border:
-                    filterValue === ""
+                    filterValue === "ALL"
                       ? "1px solid #02981D"
                       : "1px solid #5E5E5E",
                   color: filterValue === "" ? "#02981D" : "#5E5E5E",
                   "&:hover": {
-                    backgroundColor: filterValue === "" ? "#FAFAFA" : "#fff",
+                    backgroundColor: filterValue === "ALL" ? "#FAFAFA" : "#fff",
                   },
                   textTransform: "capitalize",
                   fontWeight: "400",

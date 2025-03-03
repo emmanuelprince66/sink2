@@ -2,9 +2,16 @@ import { Button } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import EarningsTable from "./EarningsTable";
+import { earningsUrl } from "../../api/endpoint";
+import useFetchData from "../../hooks/useFetchData";
 
 const Earns = () => {
   const [filter, setFilter] = useState("");
+  const apiUrl = earningsUrl();
+  const queryKey = ["fetchEarningsData", apiUrl];
+  const { data, error, isLoading } = useFetchData(queryKey, apiUrl);
+
+  console.log("earnings", data);
   return (
     <div className="w-full flex flex-col items-start  gap-3">
       <div className="w-full flex items-center justify-between mb-3">
