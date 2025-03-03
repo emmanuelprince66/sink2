@@ -47,19 +47,15 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
       }
     },
     onSuccess: (data) => {
-      console.log("data---55666", data);
-      notiSuccess("Email verified successfully!");
+      navigate("/overview");
+      const adminData = {
+        email: data?.email,
+        firstname: data?.name,
+      };
 
-      setComponent("Login");
-      // const adminData = {
-      //   email: data?.email,
-      //   firstname: data?.firstname,
-      //   role: data?.role,
-      // };
-
-      // localStorage.setItem("user", JSON.stringify(adminData));
-      // Cookies.set("authToken", data?.tokens?.access);
-      // Cookies.set("refreshToken", data?.tokens?.refresh);
+      localStorage.setItem("user", JSON.stringify(adminData));
+      Cookies.set("authToken", data?.access_token);
+      Cookies.set("refreshToken", data?.refresh_token);
 
       // Handle success, update state, or perform further actions
     },
