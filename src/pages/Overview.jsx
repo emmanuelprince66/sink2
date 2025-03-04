@@ -211,33 +211,30 @@ const Overview = () => {
       {/* corporative data analytics */}
 
       <div className="w-full rounded-md border-[1px] border-[#E3E3E3] mt-5 p-3 flex flex-col gap-2">
-        <p className="text-general font-[500] text-[16px]">Cooperative</p>
+        {/* <p className="text-general font-[500] text-[16px]">Cooperative</p> */}
 
         <div className="flex justify-between gap-3 items-center w-full mt-4">
-          {isLoading ? (
+          {/* {isLoading ? (
             <Skeleton variant="rounded" width="100%" height={110} />
           ) : (
             <CustomCorporativeCard
               text="Total Cooperative Members"
               amt={data?.total_coop_members}
             />
-          )}
+          )} */}
 
-          {isLoading ? (
+          {/* {isLoading ? (
             <Skeleton variant="rounded" width="100%" height={110} />
           ) : (
             <CustomCorporativeCard
               text="Total Active Members"
               amt={data?.active_user}
             />
-          )}
+          )} */}
           {isLoading ? (
             <Skeleton variant="rounded" width="100%" height={110} />
           ) : (
-            <CustomCorporativeCard
-              text="Total Cooperative Savings"
-              amt={<FormattedPrice amount={data?.total_coop_saved} />}
-            />
+            <CustomCorporativeCard text="Partner ID" amt={0} />
           )}
         </div>
       </div>

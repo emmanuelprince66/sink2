@@ -12,21 +12,13 @@ import {
   TableHead,
   TableRow,
   CircularProgress,
-  Paper,
-  Grid,
-  Container,
-  TextField,
-  TablePagination,
-  ToggleButtonGroup,
-  ToggleButton,
-  Card,
   Typography,
-  Modal,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CustomPagination from "../../components/CustomPagination";
 const AllMembers = ({
   searchValue,
+  isLoading,
   setShowComp,
   currentPage,
   setMemberId,
@@ -248,7 +240,7 @@ const AllMembers = ({
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {!data?.results ? (
+                    {isLoading ? (
                       <CircularProgress
                         size="4.2rem"
                         sx={{

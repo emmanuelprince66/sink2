@@ -10,6 +10,8 @@ export function AuthProvider({ children }) {
   const [redirectToLogin, setRedirectToLogin] = useState(false);
   const token = getCookie("authToken");
 
+  console.log("token", token);
+
   useEffect(() => {
     setShowSpinner(true);
     async function fetchUserDetails() {

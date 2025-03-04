@@ -19,6 +19,7 @@ import { BaseAxios } from "../helpers/axiosInstance";
 import { ToastContainer } from "react-toastify";
 import { notiError, notiSuccess } from "../utils/noti";
 import { useNavigate } from "react-router";
+import Cookies from "js-cookie";
 
 const VerifySignUpOtp = ({ setComponent, userEmail }) => {
   const [pins, setPins] = useState(["", "", "", "", "", ""]);
@@ -50,6 +51,8 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
     },
     onSuccess: (data) => {
       navigate("/overview");
+
+      console.log("dtata", data);
 
       console.log("hello");
 

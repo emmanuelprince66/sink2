@@ -50,6 +50,7 @@ const Members = () => {
           searchValue={searchValue}
           filterValue={filterValue}
           totalPages={totalPages}
+          isLoading={isLoading}
           data={data || []}
         />
       )}

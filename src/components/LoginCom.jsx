@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 import {
-  CardContent,
   Checkbox,
   TextField,
   FormControlLabel,
@@ -10,15 +9,12 @@ import {
   InputAdornment,
   Button,
   Grid,
-  Typography,
   InputLabel,
   CircularProgress,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import CustomCard from "../components/CustomCard";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
@@ -31,7 +27,7 @@ import { notiError, notiSuccess } from "../utils/noti";
 
 import Cookies from "js-cookie";
 
-import { AuthAxios, BaseAxios } from "../helpers/axiosInstance";
+import { BaseAxios } from "../helpers/axiosInstance";
 
 const LoginCom = ({ setComponent }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +37,7 @@ const LoginCom = ({ setComponent }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { errors },
   } = useForm();
 
   const loginMutation = useMutation({
@@ -82,7 +78,7 @@ const LoginCom = ({ setComponent }) => {
     },
     onError: (error) => {
       setButtonDisabled(false);
-      notifyError(String(error));
+      notiError(String(error));
     },
   });
   const handleClickShowPassword = () => setShowPassword((show) => !show);
