@@ -18,11 +18,13 @@ import { useMutation } from "@tanstack/react-query";
 import { BaseAxios } from "../helpers/axiosInstance";
 import { ToastContainer } from "react-toastify";
 import { notiError, notiSuccess } from "../utils/noti";
+import { useNavigate } from "react-router";
 
 const VerifySignUpOtp = ({ setComponent, userEmail }) => {
   const [pins, setPins] = useState(["", "", "", "", "", ""]);
   const pinRef = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  const navigate = useNavigate();
 
   const verifyOtpMutation = useMutation({
     mutationFn: async (formData) => {
@@ -48,6 +50,9 @@ const VerifySignUpOtp = ({ setComponent, userEmail }) => {
     },
     onSuccess: (data) => {
       navigate("/overview");
+
+      console.log("hello");
+
       const adminData = {
         email: data?.email,
         firstname: data?.name,
