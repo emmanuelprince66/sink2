@@ -19,6 +19,8 @@ const Overview = () => {
   const queryKey = ["fetchOverveiwData", apiUrl];
   const { data, error, isLoading } = useFetchData(queryKey, apiUrl);
 
+  console.log("data", data);
+
   // cooperative card
   const CustomCorporativeCard = ({ text, amt }) => {
     return (
@@ -234,7 +236,7 @@ const Overview = () => {
           {isLoading ? (
             <Skeleton variant="rounded" width="100%" height={110} />
           ) : (
-            <CustomCorporativeCard text="Partner ID" amt={0} />
+            <CustomCorporativeCard text="Partner ID" amt={data?.referal_id} />
           )}
         </div>
       </div>
