@@ -23,6 +23,8 @@ const Members = () => {
   const queryKey = ["fetchMembers", apiUrl, currentPage];
   const { data, error, isLoading } = useFetchData(queryKey, apiUrl);
 
+  console.log("data", data);
+
   const totalPages = data?.pages;
 
   const handlePageChange = (page) => {

@@ -249,10 +249,10 @@ const AllMembers = ({
                           padding: "1em",
                         }}
                       />
-                    ) : data?.results &&
-                      Array.isArray(data?.results) &&
-                      data?.results?.length > 0 ? (
-                      data?.results?.map((item, i) => (
+                    ) : data?.data &&
+                      Array.isArray(data?.data) &&
+                      data?.data?.length > 0 ? (
+                      data?.data?.map((item, i) => (
                         <TableRow key={item.id}>
                           <TableCell>{page * rowsPerPage + i + 1}</TableCell>
                           <TableCell>
@@ -263,7 +263,7 @@ const AllMembers = ({
                                 color: "#828282",
                               }}
                             >
-                              {item?.lastname} {item?.firstname}
+                              {item?.name}
                             </Typography>
                           </TableCell>
                           <TableCell>
@@ -302,13 +302,45 @@ const AllMembers = ({
                                 width: "80px",
                               }}
                             >
-                              {item?.membership_status?.toLowerCase() ===
-                              "active" ? (
-                                <span className="w-[10px] h-[10px] rounded-full  bg-primary_green" />
+                              {item?.is_active === "active" ? (
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    gap: "2px",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <span className="w-[10px] h-[10px] rounded-full  bg-primary_green" />
+                                  <Typography
+                                    sx={{
+                                      fontWeight: "400",
+                                      fontSize: "10px",
+                                      color: "#E52929",
+                                    }}
+                                  >
+                                    Active
+                                  </Typography>
+                                </Box>
                               ) : (
-                                <span className="w-[10px] h-[10px] rounded-full  bg-[#E52929]" />
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    gap: "2px",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <span className="w-[10px] h-[10px] rounded-full  bg-[#E52929]" />
+                                  <Typography
+                                    sx={{
+                                      fontWeight: "400",
+                                      fontSize: "10px",
+                                      color: "#E52929",
+                                    }}
+                                  >
+                                    Inactive
+                                  </Typography>
+                                </Box>
                               )}
-                              {item?.membership_status?.toLowerCase()}
                             </Typography>
                           </TableCell>
                           <TableCell>
