@@ -21,8 +21,10 @@ import {
 } from "@mui/material";
 import CustomPagination from "../../components/CustomPagination";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
+import FormattedPrice from "../../utils/FormattedPrice";
 
-const EarningsTable = () => {
+const EarningsTable = ({ data, isLoading, page, rowsPerPage }) => {
+  console.log("data", data);
   return (
     <>
       <Box className="w-full">
@@ -40,6 +42,44 @@ const EarningsTable = () => {
                 <TableCell>Status</TableCell>
               </TableRow>
             </TableHead>
+
+            <TableBody>
+              {isLoading || !data ? (
+                <CircularProgress
+                  size="4.2rem"
+                  sx={{
+                    color: "#02981D",
+                    marginLeft: "auto",
+                    padding: "1em",
+                  }}
+                />
+              ) : data && Array.isArray(data) && data?.length > 0 ? (
+                data?.map((item, i) => (
+                  <TableRow key={item.id}>
+                    <TableCell>{page * rowsPerPage + i + 1}</TableCell>
+                    <TableCell>
+                      <Typography
+                        sx={{
+                          fontWeight: "400",
+                          fontSize: "16px",
+                          color: "#5E5E5E",
+                        }}
+                      >
+                        {item?.month}
+                      </Typography>
+                    </TableCell>
+                    <TableCell>
+                      <FormattedPrice amount={item?.total_earnings} />
+                    </TableCell>
+                    <TableCell>{item?.amount}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan="7">No data found</TableCell>
+                </TableRow>
+              )}
+            </TableBody>
           </Table>
         </TableContainer>
       </Box>

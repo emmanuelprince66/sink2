@@ -11,6 +11,11 @@ const Earns = () => {
   const queryKey = ["fetchEarningsData", apiUrl];
   const { data, error, isLoading } = useFetchData(queryKey, apiUrl);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(100);
+  const totalPages = 10;
+
   console.log("earnings", data);
   return (
     <div className="w-full flex flex-col items-start  gap-3">
@@ -60,16 +65,15 @@ const Earns = () => {
       </div>
 
       <EarningsTable
-
-      // isLoading={isLoading}
-      // handleOpenModal={handleOpenModal}
-      // transactionsData={transactionsData}
-      // filteredTrxData={filteredTrxData}
-      // page={page}
-      // onPageChange={handlePageChange}
-      // totalPages={totalPages}
-      // rowsPerPage={rowsPerPage}
-      // currentPage={currentPage}
+        isLoading={isLoading}
+        // handleOpenModal={handleOpenModal}
+        data={data}
+        // filteredTrxData={filteredTrxData}
+        page={page}
+        // onPageChange={handlePageChange}
+        totalPages={totalPages}
+        rowsPerPage={rowsPerPage}
+        currentPage={currentPage}
       />
 
       {/* {trxFilter === "referral" && <Referrals />} */}
