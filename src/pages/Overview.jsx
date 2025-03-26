@@ -51,12 +51,12 @@ const Overview = () => {
               </p>
               <p className="text-[20px] font-[600] text-general">{time}</p>
             </div>
-            <div className="w-full flex flex-col items-start gap-2">
+            {/* <div className="w-full flex flex-col items-start gap-2">
               <p className="text-[14px] font-[400] text-primary_grey_2">
                 {textTwo}
               </p>
               <p className="text-[20px] font-[600] text-general">{filter}</p>
-            </div>
+            </div> */}
           </div>
         )}
       </CustomCard>

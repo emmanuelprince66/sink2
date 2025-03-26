@@ -19,6 +19,7 @@ import Investment from "./pages/investments/Investment";
 import Transactions from "./pages/Transactions";
 import Rmerchant from "./pages/r-merchant/Rmerchant";
 import Earns from "./pages/earns/Earns";
+import AddBank from "./pages/bank/AddBank";
 
 const theme = createTheme({
   typography: {
@@ -37,6 +38,7 @@ const RoutesContainer = () => {
     { component: <Loans />, path: "/loans", name: "Loans" },
     { component: <Loans />, path: "/loans", name: "Loans" },
     { component: <Earns />, path: "/earns", name: "Earns" },
+    { component: <AddBank />, path: "/bank", name: "Bank" },
     {
       component: <Notifications />,
       path: "/notifications",

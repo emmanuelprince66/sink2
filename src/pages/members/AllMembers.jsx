@@ -232,8 +232,10 @@ const AllMembers = ({
                   >
                     <TableRow>
                       <TableCell>S/N</TableCell>
-                      <TableCell> Name</TableCell>
+                      <TableCell> Name Of Business</TableCell>
                       <TableCell>Phone Number</TableCell>
+                      <TableCell>Subscription Duration</TableCell>
+                      <TableCell>Subscription Amount</TableCell>
                       <TableCell>Email Address</TableCell>
                       <TableCell>Membership Status</TableCell>
                       <TableCell>Action</TableCell>

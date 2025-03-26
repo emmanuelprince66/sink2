@@ -113,6 +113,15 @@ const SideBar = () => {
       ),
       link: "earns",
     },
+    {
+      name: "Bank",
+      component: (
+        <span isRightLink={location === "/bank"}>
+          <Sfour color={location === "/bank" ? "white" : "#5E5E5E"} />
+        </span>
+      ),
+      link: "bank",
+    },
   ];
   return (
     <div className="p-3 ">

@@ -37,8 +37,13 @@ const EarningsTable = ({ data, isLoading, page, rowsPerPage }) => {
             >
               <TableRow>
                 <TableCell>S/N</TableCell>
+                <TableCell>Name Of Business</TableCell>
+                <TableCell>Subscription Amount</TableCell>
+                <TableCell>Commission Amount</TableCell>
+                <TableCell>Duration</TableCell>
+                <TableCell>Data Of Expiration</TableCell>
                 <TableCell> Month</TableCell>
-                <TableCell>Amount(N)</TableCell>
+                {/* <TableCell>Amount(N)</TableCell> */}
                 <TableCell>Status</TableCell>
               </TableRow>
             </TableHead>

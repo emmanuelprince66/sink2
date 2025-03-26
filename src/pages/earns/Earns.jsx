@@ -4,6 +4,8 @@ import { useState } from "react";
 import EarningsTable from "./EarningsTable";
 import { earningsUrl } from "../../api/endpoint";
 import useFetchData from "../../hooks/useFetchData";
+import Referrals from "../transactions/Referrals";
+import ReferralTable from "../transactions/ReferralTable";
 
 const Earns = () => {
   const [filter, setFilter] = useState("");
@@ -64,19 +66,30 @@ const Earns = () => {
         </Button>
       </div>
 
-      <EarningsTable
-        isLoading={isLoading}
-        // handleOpenModal={handleOpenModal}
-        data={data}
-        // filteredTrxData={filteredTrxData}
-        page={page}
-        // onPageChange={handlePageChange}
-        totalPages={totalPages}
-        rowsPerPage={rowsPerPage}
-        currentPage={currentPage}
-      />
+      {filter === "" && (
+        <EarningsTable
+          isLoading={isLoading}
+          // handleOpenModal={handleOpenModal}
+          data={data}
+          // filteredTrxData={filteredTrxData}
+          page={page}
+          // onPageChange={handlePageChange}
+          totalPages={totalPages}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+        />
+      )}
 
-      {/* {trxFilter === "referral" && <Referrals />} */}
+      {filter === "referral" && (
+        <ReferralTable
+          page={page}
+          isLoading={isLoading}
+          data={data}
+          totalPages={totalPages}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+        />
+      )}
     </div>
   );
 };

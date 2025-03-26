@@ -277,6 +277,13 @@ const MemberProfile = ({ close, memberId, type }) => {
                     <div className="flex gap-3 items-center">
                       <img src={mSix} alt="" />
                       <div className="flex flex-col items-start gap-1">
+                        <p className="text-primary_grey_2 text-[12px] ">Town</p>
+                        <p className="text-general text-[16px] ">-</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3 items-center">
+                      <img src={mSix} alt="" />
+                      <div className="flex flex-col items-start gap-1">
                         <p className="text-primary_grey_2 text-[12px] ">
                           Address.
                         </p>
@@ -497,7 +504,7 @@ const MemberProfile = ({ close, memberId, type }) => {
                 <div className="flex flex-col items-center">
                   <div className="flex w-full mb-6 justify-between items-center">
                     <p className="text-general text-[16px] font-[500] ">
-                    Marketers
+                      Marketers
                     </p>
 
                     <span className="flex gap-3 items-center cursor-pointer">
